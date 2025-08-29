@@ -1,0 +1,130 @@
+/* Загальні стилі */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header,
+footer {
+    background: #0078d7;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+.schedule {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Стиль для кожного дня */
+.day {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.day h2 {
+    margin-top: 0;
+    color: #0078d7;
+}
+
+.day ul {
+    list-style: none;
+    padding: 0;
+}
+
+.day li {
+    margin: 0.5rem 0;
+}
+
+.day a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.day a:hover {
+    background: #e0e0e0;
+}
+
+/*  Подвійний урок — без кольорового фону */
+.day li.dual {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.day li.dual a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.day li.dual a:hover {
+    background: #e0e0e0;
+}
+
+.day li.dual span {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Дзвоник */
+.bells {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bells h2 {
+    color: #0078d7;
+}
+
+.bells ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bells li {
+    margin: 0.3rem 0;
+}
+
+/*  Мобільна версія */
+@media (max-width: 600px) {
+    .schedule {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*  Планшетна версія */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .schedule {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*  Десктопна версія */
+@media (min-width: 1025px) {
+    .schedule {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
